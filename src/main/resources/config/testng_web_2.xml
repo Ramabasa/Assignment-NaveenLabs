@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite"  verbose="0" parallel="tests" thread-count="3">
+<!--	<listeners>-->
+<!--		<listener class-name="com.quantum.listeners.QuantumReportiumListener" />-->
+<!--	</listeners>-->
+
+	<test name="ChromeTest" enabled="true">
+		<parameter name="browser" value="Chrome"/>
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="parallelTest.CrossBrowserScript" />
+<!--				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />-->
+
+		</classes>
+
+	</test>
+	<test name="FirefoxTest" enabled="true">
+		<parameter name="browser" value="Firefox"/>
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="parallelTest.CrossBrowserScript" />
+
+		</classes>
+	</test>
+	<test name="EdgeTest" enabled="true">
+		<parameter name="browser" value="Edge"/>
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="parallelTest.CrossBrowserScript" />
+
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,53 @@
+#locator repository for search page
+
+#*****************************************************************************************************************************
+
+#Registration Page
+click.MyAccount.link=xpath=//a[@title="My Account"]
+click.Register.link=xpath=//a[text()="Register"]
+click.Login.link=xpath=//a[text()="Login"]
+click.Logout.link=xpath=//a[text()="Logout"]
+txt.email=id=input-email
+txt.password=id=input-password
+btn.login=xpath=//input[@value="Login"]
+fname.txtBox=name=firstname
+lastname.txtBox=name=lastname
+email.txtBox=name=email
+telephone.txtBox=name=telephone
+password.txtBox=name=password
+confirm.txtBox=name=confirm
+agree.chkBox=name=agree
+click.continue.btn=xpath=//input[@value=\"Continue\"]
+click.Continue.link=xpath=//a[text()="Continue"]
+click.laptopnotebook.link=xpath=//a[text()="Laptops & Notebooks"]
+click.allLaptopNoteBooks.link=xpath=//a[text()="Show All Laptops & Notebooks"]
+msg.UserCreattion.Success=xpath=//*[text()="Congratulations! Your new account has been successfully created!"]
+msg.UserCreattion.warning=xpath=//div[contains(text()," Warning: E-Mail Address is already registered!")]
+sort.Items=id=input-sort
+login.Confirmation=id=//h2[text()="My Account"]
+msg.Useraccess.warning=xpath=//div[contains(text()," Warning: No match for E-Mail Address and/or Password.")]
+
+
+#ItemsList
+
+#first.item.lnk=xpath=//button[@onclick="cart.add('45', '1');"]//parent::div//parent::div//a
+first.item.lnk=xpath=//h4/a[contains(@href, "product_id=45")]
+#first.item.addToCartBtn=xpath=//button[@onclick="cart.add('45', '1');"]
+first.item.addToCartBtn=xpath=(//*[contains(text(),"Add to Cart")])[1]
+#first.item.price=xpath= //button[@onclick="cart.add('45', '1');"]//parent::div//preceding-sibling::div//p[@class="price"]
+first.item.price=xpath=//a[contains(@href, "product_id=45")]//parent::h4//following::p[2]
+#second.item.lnk=xpath=//button[@onclick="cart.add('46', '1');"]//parent::div//parent::div//a
+second.item.lnk=xpath=//h4/a[contains(@href, "product_id=45")]
+#second.item.addToCartBtn=xpath=//button[@onclick="cart.add('46', '1');"]
+second.item.addToCartBtn=xpath=(//*[contains(text(),"Add to Cart")])[2]
+#second.item.price=xpath= //button[@onclick="cart.add('46', '1');"]//parent::div//preceding-sibling::div//p[@class="price"]
+second.item.price=xpath=//a[contains(@href, "product_id=46")]//parent::h4//following::p[2]
+
+crt.total.amount=xpath=//*[text()="Total"]//parent::td/following::td
+btn.total.cart=xpath=//*[@type="button" and @data-toggle="dropdown"]
+
+
+
+
+
+

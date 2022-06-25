@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Demo Suite" verbose="0" parallel="tests"
+	thread-count="100">
+<!--	<listeners>-->
+<!--		<listener class-name="com.quantum.listeners.QuantumReportiumListener" />-->
+<!--	</listeners>-->
+
+	<test name="ChromeTest" enabled="true"
+		thread-count="10">
+<!--		<parameter name="driver.capabilities.model" value="Galaxy.*"></parameter>-->
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer" />
+				<include name="@VerifyUserDetails" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<test name="FirefoxTest" enabled="false" thread-count="10">
+<!--		<parameter name="driver.capabilities.model" value="iPhone.*"></parameter>-->
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer" />
+			</run>
+		</groups>
+		<classes>
+			<class
+				name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+	<test name="EdgeTest" enabled="false" thread-count="10">
+<!--		<parameter name="driver.capabilities.model" value="iPhone.*"></parameter>-->
+		<groups>
+			<run>
+				<include name="@OrderMAcBookForNewUSer" />
+			</run>
+		</groups>
+		<classes>
+			<class
+					name="com.qmetry.qaf.automation.step.client.gherkin.GherkinScenarioFactory" />
+		</classes>
+	</test>
+</suite>
