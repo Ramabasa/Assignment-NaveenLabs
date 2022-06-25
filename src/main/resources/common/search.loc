@@ -24,8 +24,9 @@ click.allLaptopNoteBooks.link=xpath=//a[text()="Show All Laptops & Notebooks"]
 msg.UserCreattion.Success=xpath=//*[text()="Congratulations! Your new account has been successfully created!"]
 msg.UserCreattion.warning=xpath=//div[contains(text()," Warning: E-Mail Address is already registered!")]
 sort.Items=id=input-sort
-login.Confirmation=id=//h2[text()="My Account"]
+login.Confirmation=xpath=//h2[text()="My Account"]
 msg.Useraccess.warning=xpath=//div[contains(text()," Warning: No match for E-Mail Address and/or Password.")]
+msg.exceedLimt.warning=xpath=//div[contains(text(),"Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.")]
 
 
 #ItemsList

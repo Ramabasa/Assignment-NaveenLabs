@@ -11,7 +11,7 @@
 		<groups>
 			<run>
 				<include name="@OrderMAcBookForNewUSer" />
-<!--				<include name="@VerifyUserDetails" />-->
+				<include name="@VerifyUserDetails" />
 			</run>
 		</groups>
 		<classes>

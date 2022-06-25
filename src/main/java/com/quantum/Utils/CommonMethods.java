@@ -99,6 +99,8 @@ public class CommonMethods  {
         Fillo fillo = new Fillo();
         Connection connection = fillo.getConnection(ConfigurationManager.getBundle().getPropertyValue("TestCaseDocument"));
         String strQuery = "Update UserList set "+colName+" = '"+colValue+"' Where TestID = '" +testCaseID+"' ";
+        connection.executeUpdate(strQuery);
+        connection.close();
     }
 
 

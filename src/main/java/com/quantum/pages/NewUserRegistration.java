@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 
 import static com.quantum.Utils.CommonMethods.*;
+import static java.lang.Boolean.TRUE;
 //import static parallelTest.CrossBrowserScript.*;
 
 
@@ -71,6 +72,11 @@ public class NewUserRegistration extends WebDriverBaseTestPage<WebDriverTestPage
 
 	@FindBy(locator = "msg.Useraccess.warning")
 	private QAFExtendedWebElement msgUseraccesswarning;
+
+	@FindBy(locator = "msg.exceedLimt.warning")
+	private QAFExtendedWebElement msgExceedLimtWarning;
+
+
 
 
 
@@ -156,30 +162,32 @@ public class NewUserRegistration extends WebDriverBaseTestPage<WebDriverTestPage
 	public void iVerifyUserAccessedTheApplication(String TestID) {
 
 		try{
-			Thread.sleep(5000);
-			if(loginConfirmation.isDisplayed()){
-				((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid green'", loginConfirmation);
-				System.out.println("-------------->>>>> Application logged in Successfully ----------->>>>>");
-				new CommonMethods().updateFlag("Flag","YES", TestID);
-				iLoggedOffTheApplication();
-			}else{
-				System.out.println("-------------->>>>> Unable to login ----------->>>>>");
-				new CommonMethods().updateFlag("Flag","NO", TestID);
-			}
+			Thread.sleep(2000);
+			((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid green'", loginConfirmation);
+			System.out.println("-------------->>>>> Application logged in Successfully ----------->>>>>");
+			new CommonMethods().updateFlag("Flag","YES", TestID);
+			iLoggedOffTheApplication();
 
 		}catch(Exception e1){
 			System.out.println(e1.getMessage());
 		}
 		try{
-			Thread.sleep(5000);
+			Thread.sleep(2000);
 			((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid red'", msgUseraccesswarning);
-			if(msgUseraccesswarning.isDisplayed()){
-				System.out.println("-------------->>>>> User have not access the application-------->>>>>");
-				new CommonMethods().updateFlag("Flag","NO", TestID);
-			}
+			System.out.println("-------------->>>>> User have not access the application-------->>>>>");
+			new CommonMethods().updateFlag("Flag","NO", TestID);
 		}catch(Exception e1){
 			System.out.println(e1.getMessage());
 		}
+		try{
+			Thread.sleep(2000);
+			((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid red'", msgExceedLimtWarning);
+			System.out.println("-------------->>>>> User have not access the application-------->>>>>");
+			new CommonMethods().updateFlag("Flag","NO", TestID);
+		}catch(Exception e1){
+			System.out.println(e1.getMessage());
+		}
+
 
 	}
 
